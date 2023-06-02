@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://reference.dashif.org/dash.js/latest/dist/dash.all.debug.js"></script>
+    <script>
+        function init() {
+            const protData = {
+                "org.w3.clearkey": {
+                    "clearkeys": {
+                        "oW5AK5BW43HzbTSKpiu3S": "hyN9IKGfWKdAwFaE5pm0qg"
+                    }
+                }
+            };
+            var audio,
+                player,
+                url = "/source_media/encrypted_audio_files/stream.mpd";
+
+            audio = document.querySelector("audio");
+            player = dashjs.MediaPlayer().create();
+            player.initialize(audio, url, true);
+            player.setProtectionData(protData);
+        }
+    </script>
+</head>
+<body>
+<div>
+    <audio controls="true"></audio>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        init();
+    });
+</script>
+
+</body>
+</html>

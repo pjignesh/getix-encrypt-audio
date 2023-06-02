@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  getix_encrypt_audio:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: getix_encrypt_audio:0.0.4
+    volumes: 
+      - /home/trellis/getix-backend/media:/mnt_media
